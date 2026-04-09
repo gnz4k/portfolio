@@ -4,6 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const hireMeBtn = document.getElementById('hire-me-btn');
   const searchInput = document.getElementById('portfolio-search');
   const searchDropdown = document.getElementById('search-dropdown');
+  const searchContainer = document.querySelector('.search-container');
+  
+  // Mobile Sidebar Elements
+  const sidebar = document.querySelector('.sidebar');
+  const sidebarOverlay = document.getElementById('sidebar-overlay');
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+
+  // Mobile Sidebar Logic
+  function toggleSidebar() {
+      if (sidebar) sidebar.classList.toggle('open');
+      if (sidebarOverlay) sidebarOverlay.classList.toggle('open');
+  }
+
+  if (mobileMenuToggle) mobileMenuToggle.addEventListener('click', toggleSidebar);
+  if (sidebarOverlay) sidebarOverlay.addEventListener('click', toggleSidebar);
 
   // Navigation Logic
   function navigateTo(targetId) {
@@ -27,6 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchInput) {
         searchInput.value = '';
         searchDropdown.classList.remove('active');
+    }
+
+    // Close mobile sidebar if open
+    if (sidebar && sidebar.classList.contains('open')) {
+        toggleSidebar();
     }
   }
 
@@ -124,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Close dropdown if clicking outside
       document.addEventListener('click', (e) => {
-          if (!searchContainer.contains(e.target)) {
+          if (searchContainer && !searchContainer.contains(e.target)) {
               searchDropdown.classList.remove('active');
           }
       });

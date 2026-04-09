@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>gnz4k's Portfolio</title>
-  <link rel="icon" type="image/png" href="Assets/Icons/EvolvedBlocksIcon.png  ">
+  <link rel="icon" type="image/png"
+    href="https://raw.githubusercontent.com/gnz4k/portfolio/refs/heads/main/Assets/Icons/EvolvedBlocksIcon.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -13,6 +14,9 @@
 
 <body>
   <div class="app-layout">
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
     <!-- Sidebar Navigation -->
     <aside class="sidebar">
       <div class="logo-container">
@@ -75,6 +79,14 @@
         </div>
 
         <div class="header-actions">
+          <button class="icon-btn mobile-menu-toggle" id="mobile-menu-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
           <button class="icon-btn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
@@ -158,7 +170,9 @@
             <!-- Project 1: Hephaestus -->
             <div id="proj-heph" class="project-card project-border">
               <div class="project-image-wrapper">
-                <img src="Assets/Banners/Hephaestus.png" alt="Hephaestus Engine">
+                <img
+                  src="https://raw.githubusercontent.com/gnz4k/portfolio/refs/heads/main/Assets/Banners/Hephaestus.png"
+                  alt="Hephaestus Engine">
               </div>
               <div class="project-content">
                 <div class="t-header">
@@ -197,13 +211,12 @@
               </div>
             </div>
 
-            <!-- Project 2 (REMOVED: Custom Web Dashboard) -->
-            <!-- Project 3 (REMOVED: Roblox Game Framework) -->
-
             <!-- Project 3: Procedural World Engine -->
             <div id="proj-procedural-world" class="project-card project-border">
               <div class="project-image-wrapper">
-                <img src="Assets/Banners/PerlinProject.png" alt="Procedural World Engine">
+                <img
+                  src="https://raw.githubusercontent.com/gnz4k/portfolio/refs/heads/main/Assets/Banners/PerlinProject.png"
+                  alt="Procedural World Engine">
               </div>
               <div class="project-content">
                 <div class="t-header">
@@ -250,7 +263,9 @@
             <!-- Project 4: Project GK | VAL -->
             <div id="proj-gk-val" class="project-card project-border">
               <div class="project-image-wrapper">
-                <img src="Assets/Banners/ProjectGK.png" alt="Project GK | VAL">
+                <img
+                  src="https://raw.githubusercontent.com/gnz4k/portfolio/refs/heads/main/Assets/Banners/ProjectGK.png"
+                  alt="Project GK | VAL">
               </div>
               <div class="project-content">
                 <div class="t-header">
