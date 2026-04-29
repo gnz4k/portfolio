@@ -17,6 +17,97 @@ document.addEventListener('DOMContentLoaded', () => {
       if (sidebarOverlay) sidebarOverlay.classList.toggle('open');
   }
 
+  // --- DESIGN SPELLS: INTERACTIONS --- //
+
+  // 1. Text Scramble Logic
+  class TextScramble {
+    constructor(el) {
+      this.el = el;
+      this.chars = '!<>-_\\\\/[]{}—=+*^?#________';
+      this.update = this.update.bind(this);
+    }
+    setText(newText) {
+      const oldText = this.el.innerText;
+      const length = Math.max(oldText.length, newText.length);
+      const promise = new Promise((resolve) => this.resolve = resolve);
+      this.queue = [];
+      for (let i = 0; i < length; i++) {
+        const from = oldText[i] || '';
+        const to = newText[i] || '';
+        const start = Math.floor(Math.random() * 40);
+        const end = start + Math.floor(Math.random() * 40);
+        this.queue.push({ from, to, start, end });
+      }
+      cancelAnimationFrame(this.frameRequest);
+      this.frame = 0;
+      this.update();
+      return promise;
+    }
+    update() {
+      let output = '';
+      let complete = 0;
+      for (let i = 0, n = this.queue.length; i < n; i++) {
+        let { from, to, start, end, char } = this.queue[i];
+        if (this.frame >= end) {
+          complete++;
+          output += to;
+        } else if (this.frame >= start) {
+          if (!char || Math.random() < 0.28) {
+            char = this.randomChar();
+            this.queue[i].char = char;
+          }
+          output += `<span class="scramble-dim">${char}</span>`;
+        } else {
+          output += from;
+        }
+      }
+      this.el.innerHTML = output;
+      if (complete === this.queue.length) {
+        this.resolve();
+      } else {
+        this.frameRequest = requestAnimationFrame(this.update);
+        this.frame++;
+      }
+    }
+    randomChar() {
+      return this.chars[Math.floor(Math.random() * this.chars.length)];
+    }
+  }
+
+  const scramblers = [];
+  document.querySelectorAll('.scramble-text').forEach(el => {
+    scramblers.push({
+      instance: new TextScramble(el),
+      text: el.getAttribute('data-value') || el.innerText
+    });
+  });
+
+  // 2. Cursor Tracking Glow
+  const glowCards = document.querySelectorAll('.glow-card');
+  document.addEventListener('mousemove', e => {
+    for(const card of glowCards) {
+      const rect = card.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+      card.style.setProperty("--mouse-x", `${x}px`);
+      card.style.setProperty("--mouse-y", `${y}px`);
+    }
+  });
+
+  // 3. Magnetic Hover Magic
+  const magneticEls = document.querySelectorAll('.magnetic');
+  magneticEls.forEach((el) => {
+    el.addEventListener('mousemove', function(e) {
+      const position = el.getBoundingClientRect();
+      const x = e.pageX - position.left - position.width / 2;
+      const y = e.pageY - position.top - position.height / 2;
+      el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+    el.addEventListener('mouseleave', function() {
+      el.style.transform = 'translate(0px, 0px)';
+    });
+  });
+
   if (mobileMenuToggle) mobileMenuToggle.addEventListener('click', toggleSidebar);
   if (sidebarOverlay) sidebarOverlay.addEventListener('click', toggleSidebar);
 
@@ -36,6 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const targetView = document.getElementById(targetId);
     if (targetView) {
       targetView.classList.add('active');
+      
+      // Trigger scramble effect on elements within this view
+      scramblers.forEach(scrambler => {
+        if (targetView.contains(scrambler.instance.el)) {
+          scrambler.instance.setText(scrambler.text);
+        }
+      });
     }
 
     // If search triggered this, clear the search drop down

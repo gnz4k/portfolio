@@ -7,8 +7,7 @@
   <title>gnz4k's Portfolio</title>
   <link rel="icon" type="image/png"
     href="https://raw.githubusercontent.com/gnz4k/portfolio/refs/heads/main/Assets/Icons/EvolvedBlocksIcon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,14 +26,14 @@
       </div>
       <nav class="nav-menu">
         <div class="nav-section">MAIN</div>
-        <button class="nav-item active" data-target="view-home">
+        <button class="nav-item magnetic active" data-target="view-home">
           <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
             <polyline points="9 22 9 12 15 12 15 22"></polyline>
           </svg>
           Home
         </button>
-        <button class="nav-item" data-target="view-projects">
+        <button class="nav-item magnetic" data-target="view-projects">
           <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
             <line x1="8" y1="21" x2="16" y2="21"></line>
@@ -42,7 +41,7 @@
           </svg>
           Projects
         </button>
-        <button class="nav-item" data-target="view-skills">
+        <button class="nav-item magnetic" data-target="view-skills">
           <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="16 18 22 12 16 6"></polyline>
             <polyline points="8 6 2 12 8 18"></polyline>
@@ -51,7 +50,7 @@
         </button>
         <div class="divider"></div>
         <div class="nav-section">CONTACT</div>
-        <button class="nav-item" data-target="view-contact">
+        <button class="nav-item magnetic" data-target="view-contact">
           <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>
@@ -79,7 +78,7 @@
         </div>
 
         <div class="header-actions">
-          <button class="icon-btn mobile-menu-toggle" id="mobile-menu-toggle">
+          <button class="icon-btn magnetic mobile-menu-toggle" id="mobile-menu-toggle">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
               <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -87,14 +86,14 @@
               <line x1="3" y1="18" x2="21" y2="18"></line>
             </svg>
           </button>
-          <button class="icon-btn">
+          <button class="icon-btn magnetic">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
               <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
             </svg>
           </button>
           <div class="wallet">
-            <span class="vp" id="hire-me-btn">HIRE ME</span>
+            <span class="vp magnetic" id="hire-me-btn">HIRE ME</span>
           </div>
         </div>
       </header>
@@ -115,7 +114,7 @@
                 </div>
                 <span>FULL-STACK & ROBLOX MULTI-DISCIPLINARY</span>
               </div>
-              <h1 class="player-name">Gonza</h1>
+              <h1 class="player-name scramble-text" data-value="Gonza">Gonza</h1>
               <div class="player-level" id="hero-player-level">Roblox Luau, Python, HTML, CSS & JavaScript</div>
 
               <div class="level-progress">
@@ -127,7 +126,7 @@
             </div>
           </div>
 
-          <h2 id="focus-home" class="section-title">CORE FOCUS AREAS</h2>
+          <h2 id="focus-home" class="section-title scramble-text" data-value="CORE FOCUS AREAS">CORE FOCUS AREAS</h2>
           <div class="stats-grid">
             <div class="stat-card glass-card">
               <h3>Roblox Development</h3>
@@ -155,7 +154,7 @@
         <!-- PROJECTS VIEW -->
         <section id="view-projects" class="view">
           <div class="dashboard-header">
-            <h1 class="page-title">RECENT PROJECTS</h1>
+            <h1 class="page-title scramble-text" data-value="RECENT PROJECTS">RECENT PROJECTS</h1>
             <div class="game-status active-game youtube-link" onclick="navigateTo('view-contact')">
               <svg viewBox="0 0 24 24" fill="currentColor" style="width: 14px; height: 14px; margin-right: 8px;">
                 <path
@@ -168,7 +167,7 @@
           <div class="telemetry-grid">
 
             <!-- Project 1: Hephaestus -->
-            <div id="proj-heph" class="project-card project-border">
+            <div id="proj-heph" class="project-card project-border glow-card">
               <div class="project-image-wrapper">
                 <img
                   src="https://raw.githubusercontent.com/gnz4k/portfolio/refs/heads/main/Assets/Banners/Hephaestus.png"
@@ -212,7 +211,7 @@
             </div>
 
             <!-- Project 3: Procedural World Engine -->
-            <div id="proj-procedural-world" class="project-card project-border">
+            <div id="proj-procedural-world" class="project-card project-border glow-card">
               <div class="project-image-wrapper">
                 <img
                   src="https://raw.githubusercontent.com/gnz4k/portfolio/refs/heads/main/Assets/Banners/PerlinProject.png"
@@ -261,7 +260,7 @@
             </div>
 
             <!-- Project 4: Project GK | VAL -->
-            <div id="proj-gk-val" class="project-card project-border">
+            <div id="proj-gk-val" class="project-card project-border glow-card">
               <div class="project-image-wrapper">
                 <img
                   src="https://raw.githubusercontent.com/gnz4k/portfolio/refs/heads/main/Assets/Banners/ProjectGK.png"
@@ -311,12 +310,12 @@
         <!-- SKILLS VIEW -->
         <section id="view-skills" class="view">
           <div class="dashboard-header">
-            <h1 class="page-title">TECHNICAL SKILLS & EXPERTISE</h1>
+            <h1 class="page-title scramble-text" data-value="TECHNICAL SKILLS & EXPERTISE">TECHNICAL SKILLS & EXPERTISE</h1>
           </div>
 
           <div class="telemetry-grid">
 
-            <div id="skill-roblox" class="skill-category-card glass-card">
+            <div id="skill-roblox" class="skill-category-card glass-card glow-card">
               <h3>
                 <svg viewBox="0 0 24 24" fill="currentColor" style="color: white !important;">
                   <path
@@ -343,7 +342,7 @@
               </div>
             </div>
 
-            <div id="skill-python" class="skill-category-card glass-card">
+            <div id="skill-python" class="skill-category-card glass-card glow-card">
               <h3>
                 <img src="https://skillicons.dev/icons?i=python" alt="Python" class="header-skill-icon">
                 Automation & Scripting
@@ -362,7 +361,7 @@
               </div>
             </div>
 
-            <div id="skill-web" class="skill-category-card glass-card">
+            <div id="skill-web" class="skill-category-card glass-card glow-card">
               <h3>
                 <img src="https://skillicons.dev/icons?i=html" alt="HTML5" class="header-skill-icon">
                 Web Development Stack
@@ -393,7 +392,7 @@
 
         <!-- CONTACT VIEW -->
         <section id="view-contact" class="view">
-          <h1 class="page-title">CONTACT ME</h1>
+          <h1 class="page-title scramble-text" data-value="CONTACT ME">CONTACT ME</h1>
           <div id="contact-details" class="settings-container glass-card">
             <div class="settings-group">
               <h3>Let's work together</h3>
@@ -406,7 +405,7 @@
                   </div>
                   <p>gnz4kdev@gmail.com</p>
                 </div>
-                <button class="btn btn-outline" onclick="copyToClipboard('gnz4kdev@gmail.com', this)">COPY
+                <button class="btn btn-outline magnetic" onclick="copyToClipboard('gnz4kdev@gmail.com', this)">COPY
                   EMAIL</button>
               </div>
 
@@ -421,7 +420,7 @@
                   </div>
                   <p>@g_nz4k</p>
                 </div>
-                <a href="https://x.com/g_nz4k" target="_blank" class="btn btn-outline"
+                <a href="https://x.com/g_nz4k" target="_blank" class="btn btn-outline magnetic"
                   style="text-decoration: none; text-align: center; display: inline-flex; align-items: center; justify-content: center;">VISIT
                   X</a>
               </div>
@@ -437,7 +436,7 @@
                   </div>
                   <p>youtube.com/@gnz4k</p>
                 </div>
-                <a href="https://youtube.com/@gnz4k" target="_blank" class="btn btn-outline"
+                <a href="https://youtube.com/@gnz4k" target="_blank" class="btn btn-outline magnetic"
                   style="text-decoration: none; text-align: center; display: inline-flex; align-items: center; justify-content: center;">VISIT
                   CHANNEL</a>
               </div>
@@ -453,7 +452,7 @@
                   </div>
                   <p>roblox.com/users/1930795964/profile</p>
                 </div>
-                <a href="https://www.roblox.com/users/1930795964/profile" target="_blank" class="btn btn-primary"
+                <a href="https://www.roblox.com/users/1930795964/profile" target="_blank" class="btn btn-primary magnetic"
                   style="text-decoration: none; text-align: center; display: inline-flex; align-items: center; justify-content: center;">VISIT
                   PROFILE</a>
               </div>
@@ -466,7 +465,7 @@
                   </div>
                   <p>g_onzaaa</p>
                 </div>
-                <button class="btn btn-outline" onclick="copyToClipboard('g_onzaaa', this)">COPY TAG</button>
+                <button class="btn btn-outline magnetic" onclick="copyToClipboard('g_onzaaa', this)">COPY TAG</button>
               </div>
 
             </div>
