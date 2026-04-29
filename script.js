@@ -6,20 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchDropdown = document.getElementById('search-dropdown');
   const searchContainer = document.querySelector('.search-container');
   
-  // Mobile Sidebar Elements
+
   const sidebar = document.querySelector('.sidebar');
   const sidebarOverlay = document.getElementById('sidebar-overlay');
   const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
 
-  // Mobile Sidebar Logic
+
   function toggleSidebar() {
       if (sidebar) sidebar.classList.toggle('open');
       if (sidebarOverlay) sidebarOverlay.classList.toggle('open');
   }
 
-  // --- DESIGN SPELLS: INTERACTIONS --- //
 
-  // 1. Text Scramble Logic
+
+
   class TextScramble {
     constructor(el) {
       this.el = el;
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 2. Cursor Tracking Glow
+
   const glowCards = document.querySelectorAll('.glow-card');
   document.addEventListener('mousemove', e => {
     for(const card of glowCards) {
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 3. Magnetic Hover Magic
+
   const magneticEls = document.querySelectorAll('.magnetic');
   magneticEls.forEach((el) => {
     el.addEventListener('mousemove', function(e) {
@@ -111,24 +111,20 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileMenuToggle) mobileMenuToggle.addEventListener('click', toggleSidebar);
   if (sidebarOverlay) sidebarOverlay.addEventListener('click', toggleSidebar);
 
-  // Navigation Logic
+
   function navigateTo(targetId) {
-    // Remove active from all nav items and views
     navItems.forEach(nav => nav.classList.remove('active'));
     views.forEach(view => view.classList.remove('active'));
 
-    // Highlight the correct nav item
     const matchingNav = document.querySelector(`.nav-item[data-target="${targetId}"]`);
     if (matchingNav) {
       matchingNav.classList.add('active');
     }
 
-    // Show target view
     const targetView = document.getElementById(targetId);
     if (targetView) {
       targetView.classList.add('active');
       
-      // Trigger scramble effect on elements within this view
       scramblers.forEach(scrambler => {
         if (targetView.contains(scrambler.instance.el)) {
           scrambler.instance.setText(scrambler.text);
@@ -136,13 +132,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // If search triggered this, clear the search drop down
     if (searchInput) {
         searchInput.value = '';
         searchDropdown.classList.remove('active');
     }
 
-    // Close mobile sidebar if open
     if (sidebar && sidebar.classList.contains('open')) {
         toggleSidebar();
     }
@@ -158,16 +152,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Hire me button shortcut
+
   if (hireMeBtn) {
     hireMeBtn.addEventListener('click', () => {
       navigateTo('view-contact');
     });
   }
 
-  // --- SEARCH AUTO-COMPLETE LOGIC --- //
+
   
-  // Define available searchable terms and their target sections
+
   const searchableContexts = [
     { label: "Home Page", target: "view-home" },
     { label: "Experience & Focus", target: "view-home", elementId: "focus-home", focusClass: "highlight-focus-text" },
@@ -217,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                   el.classList.add(animClass);
                                   setTimeout(() => el.classList.remove(animClass), 2000);
                               }
-                          }, 300); // Wait for view animation to complete
+                          }, 300);
                       }
                   });
                   searchDropdown.appendChild(itemDiv);
@@ -240,21 +234,21 @@ document.addEventListener('DOMContentLoaded', () => {
           renderDropdown(e.target.value.toLowerCase().trim());
       });
 
-      // Close dropdown if clicking outside
+
       document.addEventListener('click', (e) => {
           if (searchContainer && !searchContainer.contains(e.target)) {
               searchDropdown.classList.remove('active');
           }
       });
 
-      // Show dropdown on initial focus if there's text
+
       if (searchInput.value.trim().length > 0) {
           renderDropdown(searchInput.value.trim());
       }
   }
 });
 
-// Copy to Clipboard Utility
+
 window.copyToClipboard = function(text, buttonElement) {
     navigator.clipboard.writeText(text).then(() => {
         const originalText = buttonElement.innerText;

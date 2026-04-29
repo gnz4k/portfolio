@@ -37,7 +37,6 @@ h1, h2, h3, h4, .page-title, .player-name, .nav-section {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* --- NEW INTERACTIONS CSS --- */
 .glow-card {
   position: relative;
   overflow: hidden;
@@ -82,7 +81,6 @@ h1, h2, h3, h4, .page-title, .player-name, .nav-section {
 
 
 
-/* --- CUSTOM SCROLLBAR OVERRIDES --- */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -109,7 +107,7 @@ h1, h2, h3, h4, .page-title, .player-name, .nav-section {
   position: relative;
 }
 
-/* MOBILE SIDEBAR OVERLAY */
+
 .sidebar-overlay {
   display: none;
   position: fixed;
@@ -242,7 +240,7 @@ h1, h2, h3, h4, .page-title, .player-name, .nav-section {
   gap: 12px;
 }
 
-/* SEARCH COMPONENT */
+
 .search-container {
   flex: 1;
   position: relative;
@@ -286,7 +284,7 @@ h1, h2, h3, h4, .page-title, .player-name, .nav-section {
   min-width: 0;
 }
 
-/* SEARCH DROPDOWN */
+
 .search-dropdown {
   position: absolute;
   top: 100%;
@@ -512,7 +510,7 @@ h1, h2, h3, h4, .page-title, .player-name, .nav-section {
   color: var(--crimson);
 }
 
-/* --- HERO SECTION --- */
+
 .hero-card {
   position: relative;
   overflow: hidden;
@@ -795,7 +793,7 @@ h1, h2, h3, h4, .page-title, .player-name, .nav-section {
   letter-spacing: 0.5px;
 }
 
-/* --- SKILLS SECTION --- */
+
 .skill-category-card {
   display: flex;
   flex-direction: column;
@@ -879,7 +877,6 @@ h1, h2, h3, h4, .page-title, .player-name, .nav-section {
   box-shadow: 0 4px 12px rgba(225, 29, 72, 0.1);
 }
 
-/* --- CONTACT SETTINGS --- */
 .settings-container {
   max-width: 100%;
 }
@@ -1001,7 +998,6 @@ h1, h2, h3, h4, .page-title, .player-name, .nav-section {
   box-shadow: 0 0 5px var(--crimson-glow);
 }
 
-/* --- FOCUS HIGHLIGHT ANIMATION --- */
 .highlight-focus {
   animation: flashFocus 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -1041,7 +1037,6 @@ h1, h2, h3, h4, .page-title, .player-name, .nav-section {
   }
 }
 
-/* TABLET (768px and up) */
 @media (min-width: 768px) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1077,10 +1072,7 @@ h1, h2, h3, h4, .page-title, .player-name, .nav-section {
   }
 }
 
-/* DESKTOP (1024px and up) */
 @media (min-width: 1024px) {
-
-  /* Restore App Layout & Scrolling */
   body {
     overflow: hidden;
   }
@@ -1100,7 +1092,7 @@ h1, h2, h3, h4, .page-title, .player-name, .nav-section {
     padding: 0 40px 40px;
   }
 
-  /* Restore Sidebar (Fixed to Layout) */
+
   .sidebar-overlay,
   .mobile-menu-toggle {
     display: none !important;
@@ -1115,7 +1107,7 @@ h1, h2, h3, h4, .page-title, .player-name, .nav-section {
     transition: none;
   }
 
-  /* Restore Header & Search */
+
   .content-header {
     height: 80px;
     padding: 0 40px;
@@ -1135,7 +1127,7 @@ h1, h2, h3, h4, .page-title, .player-name, .nav-section {
     width: 360px;
   }
 
-  /* Restore Hero & Content Scaling */
+
   .hero-card {
     min-height: 260px;
     align-items: flex-start;
@@ -1161,7 +1153,7 @@ h1, h2, h3, h4, .page-title, .player-name, .nav-section {
     font-size: 48px;
   }
 
-  /* Restore Grids */
+
   .stats-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
@@ -1170,7 +1162,7 @@ h1, h2, h3, h4, .page-title, .player-name, .nav-section {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 
-  /* Buttons & Layout Items */
+
   .wallet {
     gap: 16px;
     padding: 8px 20px;
